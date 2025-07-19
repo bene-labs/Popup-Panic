@@ -2,7 +2,7 @@ class_name  PopupSpawner
 extends Node2D
 
 @export var spawn_timer : Timer
-@export var diffculty_timer : Timer
+@export var difficulty_timer : Timer
 @export var spawn_area : Area2D
 @export var popup_holder : Node
 @export var init_min_delay := 1.0
@@ -14,16 +14,17 @@ static var highest_z_index = 0
 var min_delay : float
 var max_delay : float
 
-var diffculty = 1.0
+static var difficulty = 1.0
 
 func _ready() -> void:
 	_on_game_start()
 
 func _on_game_start():
+	difficulty = 1.0
 	highest_z_index = 0
 	min_delay = init_min_delay
 	max_delay = init_max_delay
-	diffculty_timer.start()
+	difficulty_timer.start()
 	spawn_timer.start(randf_range(min_delay, max_delay))
  
 
@@ -37,15 +38,15 @@ func spawn_popup():
 	position_in_area.x = randf_range(min.x, max.x)
 	position_in_area.y = randf_range(min.y, max.y)
 	await get_tree().process_frame
-	var new_popup = BaseWindow.spawn(diffculty, position_in_area)
+	var new_popup = BaseWindow.spawn(difficulty, position_in_area)
 	new_popup.z_index = highest_z_index
 	popup_holder.add_child(new_popup)
 
 
-func _on_diffculty_timer_timeout() -> void:
-	diffculty += difficulty_step
-	min_delay = max(0.1, init_min_delay - diffculty / 5)
-	max_delay = max(0.5, init_max_delay - diffculty / 5)
+func _on_difficulty_timer_timeout() -> void:
+	difficulty += difficulty_step
+	min_delay = max(0.1, init_min_delay - difficulty / 5)
+	max_delay = max(0.5, init_max_delay - difficulty / 5)
 
 
 func _on_spawn_timer_timeout() -> void:

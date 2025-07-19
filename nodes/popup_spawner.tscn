@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ctjvkft1ivyxp" path="res://nodes/popup_spawner.gd" id="1_qnx6s"]
 
-[node name="PopupSpawner" type="Node2D" node_paths=PackedStringArray("spawn_timer", "diffculty_timer")]
+[node name="PopupSpawner" type="Node2D" node_paths=PackedStringArray("spawn_timer", "difficulty_timer")]
 script = ExtResource("1_qnx6s")
 spawn_timer = NodePath("SpawnTimer")
-diffculty_timer = NodePath("DiffcultyTimer")
+difficulty_timer = NodePath("DiffcultyTimer")
 
 [node name="DiffcultyTimer" type="Timer" parent="."]
 

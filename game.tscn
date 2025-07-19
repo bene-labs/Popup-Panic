@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7f1qhahjt32p"]
+[gd_scene load_steps=7 format=3 uid="uid://b7f1qhahjt32p"]
 
 [ext_resource type="Texture2D" uid="uid://bukq713fc72yt" path="res://images/Windows-XP-desktop.jpg" id="1_feb5d"]
+[ext_resource type="Script" uid="uid://j8ttj6wlc8lw" path="res://game_ui.gd" id="2_7jktm"]
 [ext_resource type="Script" uid="uid://d1wly38aqimx7" path="res://nodes/over_think_bar.gd" id="2_fc0e3"]
 [ext_resource type="FontFile" uid="uid://8tpta4j7ts7d" path="res://fonts/VT323/VT323-Regular.ttf" id="3_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bn6i4g3md48t2" path="res://nodes/popup_spawner.tscn" id="5_7jktm"]
@@ -15,7 +16,10 @@ position = Vector2(640.5, 358.875)
 scale = Vector2(1.37527, 1.3695)
 texture = ExtResource("1_feb5d")
 
-[node name="GameUI" type="Node2D" parent="."]
+[node name="GameUI" type="Node2D" parent="." node_paths=PackedStringArray("score_label", "high_score_label")]
+script = ExtResource("2_7jktm")
+score_label = NodePath("Score")
+high_score_label = NodePath("Highscore")
 
 [node name="OverThinkBar" type="ProgressBar" parent="GameUI" node_paths=PackedStringArray("popup_holder")]
 offset_left = 348.0
@@ -36,6 +40,32 @@ theme_override_fonts/font = ExtResource("3_7jktm")
 theme_override_font_sizes/font_size = 32
 text = "Current Overthinking"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="GameUI"]
+offset_left = 1002.0
+offset_top = 3.0
+offset_right = 1279.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_7jktm")
+theme_override_font_sizes/font_size = 28
+text = "Score: 0"
+vertical_alignment = 1
+
+[node name="Highscore" type="Label" parent="GameUI"]
+offset_left = 1002.0
+offset_top = 40.0
+offset_right = 1279.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_7jktm")
+theme_override_font_sizes/font_size = 28
+text = "Highscore: 0"
 vertical_alignment = 1
 
 [node name="PopupSpawner" parent="." node_paths=PackedStringArray("spawn_area", "popup_holder") instance=ExtResource("5_7jktm")]
