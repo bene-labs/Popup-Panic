@@ -5,8 +5,8 @@ extends Node2D
 @export var difficulty_timer : Timer
 @export var spawn_area : Area2D
 @export var popup_holder : Node
-@export var init_min_delay := 1.0
-@export var init_max_delay := 7.0
+@export var init_min_delay := 2.0
+@export var init_max_delay := 8.0
 @export var difficulty_step := 0.1
 
 static var highest_z_index = 0
@@ -25,7 +25,7 @@ func _on_game_start():
 	min_delay = init_min_delay
 	max_delay = init_max_delay
 	difficulty_timer.start()
-	spawn_timer.start(randf_range(min_delay, max_delay))
+	spawn_timer.start(0.5)
  
 
 func spawn_popup():
@@ -44,9 +44,10 @@ func spawn_popup():
 
 
 func _on_difficulty_timer_timeout() -> void:
+	print(difficulty)
 	difficulty += difficulty_step
-	min_delay = max(0.1, init_min_delay - difficulty / 5)
-	max_delay = max(0.5, init_max_delay - difficulty / 5)
+	min_delay = max(0.1, init_min_delay - difficulty / 15)
+	max_delay = max(0.4, init_max_delay - difficulty / 15)
 
 
 func _on_spawn_timer_timeout() -> void:

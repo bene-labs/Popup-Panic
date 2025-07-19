@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgswksdu11sql"]
+
+[ext_resource type="PackedScene" uid="uid://bxa65vyd4qmb2" path="res://nodes/popups/base_window.tscn" id="1_sd0gf"]
+[ext_resource type="Script" uid="uid://dl1cchdqsviqg" path="res://random_close_popup.gd" id="2_fm21x"]
+[ext_resource type="Texture2D" uid="uid://cbng5c3a32y6d" path="res://images/red_popupbox.jpg" id="3_fm21x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drhqs"]
+size = Vector2(580, 256)
+
+[node name="RandomClosePopup" node_paths=PackedStringArray("spawn_area") instance=ExtResource("1_sd0gf")]
+script = ExtResource("2_fm21x")
+min_taps = 1
+max_taps = 3
+spawn_area = NodePath("Background/ButtonSpawnArea")
+min_size = 1.0
+
+[node name="Background" parent="." index="0"]
+texture = ExtResource("3_fm21x")
+
+[node name="ButtonSpawnArea" type="Area2D" parent="Background" index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ButtonSpawnArea" index="0"]
+position = Vector2(-1, 8)
+shape = SubResource("RectangleShape2D_drhqs")

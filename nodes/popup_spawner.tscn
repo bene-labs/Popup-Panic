@@ -11,5 +11,5 @@ difficulty_timer = NodePath("DiffcultyTimer")
 
 [node name="SpawnTimer" type="Timer" parent="."]
 
-[connection signal="timeout" from="DiffcultyTimer" to="." method="_on_diffculty_timer_timeout"]
+[connection signal="timeout" from="DiffcultyTimer" to="." method="_on_difficulty_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

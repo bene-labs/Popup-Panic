@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://crheypmax6qqp"]
+
+[ext_resource type="Texture2D" uid="uid://453cj1tcwqwi" path="res://images/close_button.jpg" id="1_2nfq5"]
+[ext_resource type="Texture2D" uid="uid://wug3l7vlh4nx" path="res://images/close_button_hover.jpg" id="2_xriuu"]
+
+[node name="CloseButton" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.33, 0.33)
+texture_normal = ExtResource("1_2nfq5")
+texture_hover = ExtResource("2_xriuu")

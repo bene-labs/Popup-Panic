@@ -18,11 +18,12 @@
 [ext_resource type="Texture2D" uid="uid://cwkpt5qrj7566" path="res://images/adds/popup6.png" id="13_2ya4o"]
 [ext_resource type="Texture2D" uid="uid://badp41514hnhd" path="res://images/adds/popup7.png" id="14_u48ig"]
 
-[node name="BaseWindow" type="Node2D" node_paths=PackedStringArray("backgroud", "add_image")]
+[node name="BaseWindow" type="Node2D" node_paths=PackedStringArray("backgroud", "add_image", "instruction_label")]
 script = ExtResource("1_tua2f")
 backgroud = NodePath("Background")
 add_textures = Array[Texture2D]([ExtResource("5_k66we"), ExtResource("3_6hjm6"), ExtResource("4_b4sls"), ExtResource("5_7w3ww"), ExtResource("6_jmwjh"), ExtResource("7_73qai"), ExtResource("8_7gojg"), ExtResource("9_3fslf"), ExtResource("10_3fwwd"), ExtResource("11_nansk"), ExtResource("12_lcmjm"), ExtResource("13_2ya4o"), ExtResource("14_u48ig")])
 add_image = NodePath("Background/Add")
+instruction_label = NodePath("Background/Label")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_r3qf2")
