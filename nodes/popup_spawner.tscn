@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn6i4g3md48t2"]
+
+[ext_resource type="Script" uid="uid://ctjvkft1ivyxp" path="res://nodes/popup_spawner.gd" id="1_qnx6s"]
+
+[node name="PopupSpawner" type="Node2D" node_paths=PackedStringArray("spawn_timer", "diffculty_timer")]
+script = ExtResource("1_qnx6s")
+spawn_timer = NodePath("SpawnTimer")
+diffculty_timer = NodePath("DiffcultyTimer")
+
+[node name="DiffcultyTimer" type="Timer" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="DiffcultyTimer" to="." method="_on_diffculty_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

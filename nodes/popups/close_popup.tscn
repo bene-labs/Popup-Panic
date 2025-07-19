@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbt0y177b3mbb"]
+
+[ext_resource type="PackedScene" uid="uid://bxa65vyd4qmb2" path="res://nodes/popups/base_window.tscn" id="1_tufox"]
+[ext_resource type="Script" uid="uid://02xameew7tnr" path="res://nodes/popups/close_popup.gd" id="2_66d63"]
+[ext_resource type="Texture2D" uid="uid://453cj1tcwqwi" path="res://images/close_button.jpg" id="3_0ox0j"]
+
+[node name="ClosePopup" instance=ExtResource("1_tufox")]
+script = ExtResource("2_66d63")
+
+[node name="CloseButton" type="TextureButton" parent="Background" index="1"]
+offset_left = 259.0
+offset_top = -179.0
+offset_right = 419.0
+offset_bottom = -19.0
+scale = Vector2(0.33, 0.33)
+texture_normal = ExtResource("3_0ox0j")
+
+[connection signal="pressed" from="Background/CloseButton" to="." method="_on_close_button_pressed"]

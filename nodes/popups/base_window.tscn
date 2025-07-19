@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxa65vyd4qmb2"]
+
+[ext_resource type="Script" uid="uid://5vgi7m2ih5so" path="res://nodes/popups/base_window.gd" id="1_tua2f"]
+[ext_resource type="Texture2D" uid="uid://cba37ud3y6wxn" path="res://images/Blank_window.png" id="2_r3qf2"]
+[ext_resource type="Script" uid="uid://b6o6s3v712vk0" path="res://nodes/popups/drag_area.gd" id="3_r3qf2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfhuy"]
+size = Vector2(640, 357)
+
+[node name="BaseWindow" type="Node2D" node_paths=PackedStringArray("backgroud")]
+script = ExtResource("1_tua2f")
+backgroud = NodePath("Background")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_r3qf2")
+
+[node name="DragArea" type="Area2D" parent="Background" node_paths=PackedStringArray("body")]
+script = ExtResource("3_r3qf2")
+body = NodePath("../..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/DragArea"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_jfhuy")
+
+[connection signal="mouse_entered" from="Background/DragArea" to="Background/DragArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/DragArea" to="Background/DragArea" method="_on_mouse_exited"]
