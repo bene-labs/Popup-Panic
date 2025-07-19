@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cbng5c3a32y6d" path="res://images/red_popupbox.jpg" id="3_fm21x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drhqs"]
-size = Vector2(580, 256)
+size = Vector2(580, 252)
 
 [node name="RandomClosePopup" node_paths=PackedStringArray("spawn_area") instance=ExtResource("1_sd0gf")]
 script = ExtResource("2_fm21x")

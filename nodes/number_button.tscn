@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://r8rg661hy3v8"]
+
+[node name="NumberButton" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1240.0
+offset_bottom = -680.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0.116655, 0.461153, 0.233511, 1)
+theme_override_colors/icon_disabled_color = Color(0.301788, 0.745392, 0.339631, 1)
+theme_override_font_sizes/font_size = 24
+text = "1"
