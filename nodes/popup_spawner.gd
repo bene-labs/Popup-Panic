@@ -20,12 +20,13 @@ func _ready() -> void:
 	_on_game_start()
 
 func _on_game_start():
+	BaseWindow.popup_scenes = [load("res://nodes/popups/close_popup.tscn")]
 	difficulty = 1.0
 	highest_z_index = 0
 	min_delay = init_min_delay
 	max_delay = init_max_delay
 	difficulty_timer.start()
-	spawn_timer.start(0.2)
+	spawn_timer.start(1.2)
  
 
 func spawn_popup():
@@ -46,8 +47,8 @@ func spawn_popup():
 func _on_difficulty_timer_timeout() -> void:
 	print(difficulty)
 	difficulty += difficulty_step
-	min_delay = max(0.1, init_min_delay - difficulty / 20)
-	max_delay = max(0.4, init_max_delay - difficulty / 20)
+	min_delay = max(0.1, init_min_delay - difficulty / 40)
+	max_delay = max(0.4, init_max_delay - difficulty / 40)
 
 
 func _on_spawn_timer_timeout() -> void:

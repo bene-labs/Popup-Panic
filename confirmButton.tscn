@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1g12t4d5nrb1"]
+
+[ext_resource type="Texture2D" uid="uid://crfu3moitb5jf" path="res://images/Clickablebutton_.jpg" id="1_xa7k5"]
+[ext_resource type="Texture2D" uid="uid://beksnxkbia13x" path="res://images/Clickablebutton_hover.jpg" id="2_epbg3"]
+[ext_resource type="FontFile" uid="uid://8tpta4j7ts7d" path="res://fonts/VT323/VT323-Regular.ttf" id="3_epbg3"]
+
+[node name="ConfirmButton" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_xa7k5")
+texture_hover = ExtResource("2_epbg3")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 208.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_epbg3")
+theme_override_font_sizes/font_size = 32
+text = "confirm"
+horizontal_alignment = 1
+vertical_alignment = 1

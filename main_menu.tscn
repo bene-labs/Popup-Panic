@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://seyoqwcg5u1h"]
+
+[ext_resource type="Texture2D" uid="uid://bao3jf185cn56" path="res://images/PopupPanicTitleScreen.jpg" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://dmc17nknf6dmn" path="res://main_menu.gd" id="1_glbon"]
+[ext_resource type="Texture2D" uid="uid://crfu3moitb5jf" path="res://images/Clickablebutton_.jpg" id="2_jix8l"]
+[ext_resource type="Texture2D" uid="uid://beksnxkbia13x" path="res://images/Clickablebutton_hover.jpg" id="3_glbon"]
+[ext_resource type="FontFile" uid="uid://8tpta4j7ts7d" path="res://fonts/VT323/VT323-Regular.ttf" id="4_nlkkf"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_glbon")
+
+[node name="PopupPanicTitleScreen" type="Sprite2D" parent="."]
+position = Vector2(671, 358)
+scale = Vector2(0.89, 0.89)
+texture = ExtResource("1_06t4h")
+
+[node name="ConfirmButton" type="TextureButton" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 633.0
+offset_top = 416.0
+offset_right = 842.0
+offset_bottom = 468.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("2_jix8l")
+texture_hover = ExtResource("3_glbon")
+
+[node name="Label" type="Label" parent="ConfirmButton"]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 208.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nlkkf")
+theme_override_font_sizes/font_size = 30
+text = "This will be fine"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Highscore" type="Label" parent="."]
+visible = false
+offset_left = 624.0
+offset_top = 373.0
+offset_right = 901.0
+offset_bottom = 412.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_nlkkf")
+theme_override_font_sizes/font_size = 30
+text = "Highscore: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+visible = false
+offset_left = 624.0
+offset_top = 340.0
+offset_right = 901.0
+offset_bottom = 379.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_nlkkf")
+theme_override_font_sizes/font_size = 30
+text = "Your Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]

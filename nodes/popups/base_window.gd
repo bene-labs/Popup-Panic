@@ -1,7 +1,7 @@
 class_name BaseWindow
 extends Node2D
 
-static var popup_scenes = [preload("res://nodes/popups/close_popup.tscn")]
+static var popup_scenes : Array
 @export var min_size = 0.3
 @export var max_size = 1
 

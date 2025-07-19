@@ -10,7 +10,7 @@ var buttons : Array
 static var num_button := preload("res://nodes/number_button.tscn")
 
 func _ready() -> void:
-	tap_count = randi_range(min_taps, max_taps + int(difficulty) - 2)
+	tap_count = randi_range(min_taps, max_taps + int((difficulty - 2) / 2))
 	spawn_buttons()
 
 func spawn_buttons():
@@ -29,6 +29,7 @@ func spawn_buttons():
 		new_button.pressed.connect(_on_num_button_clicked.bind(new_button, i + 1))
 		add_child(new_button)
 		buttons.push_back(new_button)
+
 
 func _on_num_button_clicked(button, num):
 	if num == needed_num:

@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 		self_modulate = Color.RED
 		value += fill_speed * popup_holder.get_child_count() * delta
 		if value == 100:
-			get_tree().reload_current_scene()
+			get_tree().change_scene_to_file("res://main_menu.tscn")
