@@ -25,7 +25,7 @@ func _on_game_start():
 	min_delay = init_min_delay
 	max_delay = init_max_delay
 	difficulty_timer.start()
-	spawn_timer.start(0.5)
+	spawn_timer.start(0.2)
  
 
 func spawn_popup():
@@ -46,8 +46,8 @@ func spawn_popup():
 func _on_difficulty_timer_timeout() -> void:
 	print(difficulty)
 	difficulty += difficulty_step
-	min_delay = max(0.1, init_min_delay - difficulty / 15)
-	max_delay = max(0.4, init_max_delay - difficulty / 15)
+	min_delay = max(0.1, init_min_delay - difficulty / 20)
+	max_delay = max(0.4, init_max_delay - difficulty / 20)
 
 
 func _on_spawn_timer_timeout() -> void:

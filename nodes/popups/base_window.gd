@@ -17,7 +17,9 @@ static func refresh_popup_scenes(difficulty):
 		1:
 			if difficulty >= 2:
 				popup_scenes.push_back(load("res://nodes/random_close_popup.tscn"))
-
+		2:
+			if difficulty >= 3:
+				popup_scenes.push_back(load("res://nodes/number_close_popup.tscn"))
 
 static func spawn(difficulty, position):
 	refresh_popup_scenes(difficulty)
