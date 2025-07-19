@@ -1,31 +1,40 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxa65vyd4qmb2"]
+[gd_scene load_steps=18 format=3 uid="uid://bxa65vyd4qmb2"]
 
 [ext_resource type="Script" uid="uid://5vgi7m2ih5so" path="res://nodes/popups/base_window.gd" id="1_tua2f"]
 [ext_resource type="Texture2D" uid="uid://cba37ud3y6wxn" path="res://images/Blank_window.png" id="2_r3qf2"]
+[ext_resource type="Texture2D" uid="uid://brev2m1vhkn1v" path="res://images/adds/IMG_4613.jpg" id="3_6hjm6"]
+[ext_resource type="FontFile" uid="uid://dd3g5fxlwcpv6" path="res://fonts/Anton/Anton-Regular.ttf" id="3_noh0t"]
 [ext_resource type="Script" uid="uid://b6o6s3v712vk0" path="res://nodes/popups/drag_area.gd" id="3_r3qf2"]
-[ext_resource type="Texture2D" uid="uid://duc0pnpmh15r7" path="res://images/PL_1.jpg" id="4_noh0t"]
-[ext_resource type="Texture2D" uid="uid://b8lqsp8upy5bo" path="res://images/PL_2.jpg" id="5_k66we"]
+[ext_resource type="Texture2D" uid="uid://d25c6nhrid7nw" path="res://images/adds/IMG_4614.jpg" id="4_b4sls"]
+[ext_resource type="Texture2D" uid="uid://bk044l2wmj5x7" path="res://images/adds/IMG_4615.jpg" id="5_7w3ww"]
+[ext_resource type="Texture2D" uid="uid://fkuxjabtbc43" path="res://images/adds/IMG_4612.jpg" id="5_k66we"]
+[ext_resource type="Texture2D" uid="uid://c0ntemt3irsav" path="res://images/adds/IMG_4616.jpg" id="6_jmwjh"]
+[ext_resource type="Texture2D" uid="uid://c8mmvya5jy5aq" path="res://images/adds/IMG_4617.jpg" id="7_73qai"]
+[ext_resource type="Texture2D" uid="uid://du43e7nd1tm6o" path="res://images/adds/popup1.png" id="8_7gojg"]
+[ext_resource type="Texture2D" uid="uid://dstsmkogx6txc" path="res://images/adds/popup2.png" id="9_3fslf"]
+[ext_resource type="Texture2D" uid="uid://ccrmo574se0bm" path="res://images/adds/popup3.png" id="10_3fwwd"]
+[ext_resource type="Texture2D" uid="uid://bgaucr6o8y8se" path="res://images/adds/popup4.png" id="11_nansk"]
+[ext_resource type="Texture2D" uid="uid://db5h8ak1ac3ig" path="res://images/adds/popup5.png" id="12_lcmjm"]
+[ext_resource type="Texture2D" uid="uid://cwkpt5qrj7566" path="res://images/adds/popup6.png" id="13_2ya4o"]
+[ext_resource type="Texture2D" uid="uid://badp41514hnhd" path="res://images/adds/popup7.png" id="14_u48ig"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gahrr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_noh0t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_k66we")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
-
-[node name="BaseWindow" type="Node2D" node_paths=PackedStringArray("backgroud")]
+[node name="BaseWindow" type="Node2D" node_paths=PackedStringArray("backgroud", "add_image")]
 script = ExtResource("1_tua2f")
 backgroud = NodePath("Background")
+add_textures = Array[Texture2D]([ExtResource("5_k66we"), ExtResource("3_6hjm6"), ExtResource("4_b4sls"), ExtResource("5_7w3ww"), ExtResource("6_jmwjh"), ExtResource("7_73qai"), ExtResource("8_7gojg"), ExtResource("9_3fslf"), ExtResource("10_3fwwd"), ExtResource("11_nansk"), ExtResource("12_lcmjm"), ExtResource("13_2ya4o"), ExtResource("14_u48ig")])
+add_image = NodePath("Background/Add")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_r3qf2")
+
+[node name="Label" type="Label" parent="Background"]
+offset_left = -309.0
+offset_top = -175.0
+offset_right = 258.0
+offset_bottom = -144.0
+theme_override_fonts/font = ExtResource("3_noh0t")
+theme_override_font_sizes/font_size = 22
+text = "Sponsored Content - Press the X Button to close"
 
 [node name="DragArea" type="ReferenceRect" parent="Background" node_paths=PackedStringArray("body")]
 offset_left = -319.0
@@ -36,11 +45,14 @@ mouse_default_cursor_shape = 2
 script = ExtResource("3_r3qf2")
 body = NodePath("../..")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Background"]
-position = Vector2(-4, 24)
+[node name="Add" type="TextureRect" parent="Background"]
+offset_left = -310.0
+offset_top = -120.0
+offset_right = 8533.0
+offset_bottom = 4008.0
 scale = Vector2(0.07, 0.07)
-sprite_frames = SubResource("SpriteFrames_gahrr")
-autoplay = "default"
+mouse_filter = 2
+texture = ExtResource("5_k66we")
 
 [connection signal="mouse_entered" from="Background/DragArea" to="Background/DragArea" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Background/DragArea" to="Background/DragArea" method="_on_mouse_exited"]
