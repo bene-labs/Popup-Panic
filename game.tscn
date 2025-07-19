@@ -15,13 +15,14 @@ position = Vector2(640.5, 358.875)
 scale = Vector2(1.37527, 1.3695)
 texture = ExtResource("1_feb5d")
 
-[node name="GameUI" type="CanvasLayer" parent="."]
+[node name="GameUI" type="Node2D" parent="."]
 
 [node name="OverThinkBar" type="ProgressBar" parent="GameUI" node_paths=PackedStringArray("popup_holder")]
 offset_left = 348.0
 offset_top = 37.0
 offset_right = 914.0
 offset_bottom = 79.0
+mouse_filter = 2
 script = ExtResource("2_fc0e3")
 popup_holder = NodePath("../../PopupHolder")
 
@@ -40,11 +41,16 @@ vertical_alignment = 1
 [node name="PopupSpawner" parent="." node_paths=PackedStringArray("spawn_area", "popup_holder") instance=ExtResource("5_7jktm")]
 spawn_area = NodePath("SpawnArea")
 popup_holder = NodePath("../PopupHolder")
+difficulty_step = 0.0
 
 [node name="SpawnArea" type="Area2D" parent="PopupSpawner"]
+input_pickable = false
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PopupSpawner/SpawnArea"]
 position = Vector2(639, 356.5)
 shape = SubResource("RectangleShape2D_7jktm")
 
-[node name="PopupHolder" type="Node" parent="."]
+[node name="PopupHolder" type="Node2D" parent="."]
+z_index = 1

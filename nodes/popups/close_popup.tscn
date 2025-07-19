@@ -14,5 +14,6 @@ offset_right = 419.0
 offset_bottom = -19.0
 scale = Vector2(0.33, 0.33)
 texture_normal = ExtResource("3_0ox0j")
+texture_hover = ExtResource("3_0ox0j")
 
 [connection signal="pressed" from="Background/CloseButton" to="." method="_on_close_button_pressed"]
