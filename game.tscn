@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7f1qhahjt32p"]
+[gd_scene load_steps=13 format=3 uid="uid://b7f1qhahjt32p"]
 
 [ext_resource type="Texture2D" uid="uid://bukq713fc72yt" path="res://images/Windows-XP-desktop.jpg" id="1_feb5d"]
 [ext_resource type="Script" uid="uid://j8ttj6wlc8lw" path="res://game_ui.gd" id="2_7jktm"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b6o6s3v712vk0" path="res://nodes/popups/drag_area.gd" id="4_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://bn6i4g3md48t2" path="res://nodes/popup_spawner.tscn" id="5_7jktm"]
 [ext_resource type="FontFile" uid="uid://cwms0w16do6ng" path="res://fonts/Jersey_15/Jersey15-Regular.ttf" id="6_vef74"]
+[ext_resource type="PackedScene" uid="uid://dlthn0xepjkn3" path="res://nodes/number_close_popup.tscn" id="10_hve3p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vef74"]
 animations = [{
@@ -120,6 +121,11 @@ shape = SubResource("RectangleShape2D_7jktm")
 
 [node name="PopupHolder" type="Node2D" parent="."]
 z_index = 1
+
+[node name="NumberClosePopup" parent="." instance=ExtResource("10_hve3p")]
+position = Vector2(567, 319)
+min_taps = 15
+max_taps = 15
 
 [connection signal="mouse_entered" from="CatVideo/DragArea" to="CatVideo/DragArea" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CatVideo/DragArea" to="CatVideo/DragArea" method="_on_mouse_exited"]

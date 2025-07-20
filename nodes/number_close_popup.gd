@@ -25,13 +25,23 @@ func spawn_buttons():
 		var min = centerpos - size
 		var max = centerpos + size
 		var position_in_area : Vector2
-		position_in_area.x = randf_range(min.x, max.x)
-		position_in_area.y = randf_range(min.y, max.y)
 		var new_button = num_button.instantiate()
-		new_button.show_number(i + 1)
-		new_button.position = to_local(position_in_area)
-		new_button.pressed.connect(_on_num_button_clicked.bind(new_button, i + 1))
 		add_child(new_button)
+		var buttons_overlap = true
+		while buttons_overlap:
+			position_in_area.x = randf_range(min.x, max.x)
+			position_in_area.y = randf_range(min.y, max.y)
+			new_button.position = to_local(position_in_area)
+			buttons_overlap = false
+			for b in buttons:
+				if new_button.get_rect().intersects(b.get_rect()):
+					buttons_overlap = true
+					break
+		
+		new_button.show_number(i + 1)
+		
+		new_button.pressed.connect(_on_num_button_clicked.bind(new_button, i + 1))
+		
 		buttons.push_back(new_button)
 
 

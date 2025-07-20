@@ -16,4 +16,4 @@ texture = ExtResource("3_mxhif")
 text = "Sponsored Content - Press buttons in ascending order to close"
 
 [node name="CollisionShape2D" parent="Background/ButtonSpawnArea" index="0"]
-position = Vector2(43, 10)
+position = Vector2(-62.5, 14)
