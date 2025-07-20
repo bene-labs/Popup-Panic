@@ -1,6 +1,7 @@
 extends ReferenceRect
 
 @export var body : Node2D
+@export var bring_to_front := true
 
 static var hovered_popup
 
@@ -28,8 +29,8 @@ func toggle_drag(is_on: bool):
 	is_dragging = is_on
 	if is_on:
 		mouse_offset = body.position - get_viewport().get_mouse_position() 
-		PopupSpawner.highest_z_index += 1
-		body.z_index = PopupSpawner.highest_z_index
+		if bring_to_front:
+			body.get_parent().move_child(body, -1)
 
 
 func _input(event: InputEvent) -> void:

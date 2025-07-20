@@ -47,6 +47,7 @@ offset_bottom = 180.0
 mouse_default_cursor_shape = 2
 script = ExtResource("4_j5wjh")
 body = NodePath("..")
+bring_to_front = false
 
 [node name="GameUI" type="Node2D" parent="." node_paths=PackedStringArray("score_label", "high_score_label")]
 script = ExtResource("2_7jktm")

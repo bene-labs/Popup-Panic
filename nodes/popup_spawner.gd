@@ -9,7 +9,7 @@ extends Node2D
 @export var init_max_delay := 8.0
 @export var difficulty_step := 0.1
 
-static var highest_z_index = 0
+#static var highest_z_index = 0
 
 var min_delay : float
 var max_delay : float
@@ -22,7 +22,7 @@ func _ready() -> void:
 func _on_game_start():
 	BaseWindow.popup_scenes = [load("res://nodes/popups/close_popup.tscn")]
 	difficulty = 1.0
-	highest_z_index = 0
+	#highest_z_index = 0
 	min_delay = init_min_delay
 	max_delay = init_max_delay
 	difficulty_timer.start()
@@ -40,7 +40,7 @@ func spawn_popup():
 	position_in_area.y = randf_range(min.y, max.y)
 	await get_tree().process_frame
 	var new_popup = BaseWindow.spawn(difficulty, position_in_area)
-	new_popup.z_index = highest_z_index
+	#new_popup.z_index = highest_z_index
 	popup_holder.add_child(new_popup)
 
 
