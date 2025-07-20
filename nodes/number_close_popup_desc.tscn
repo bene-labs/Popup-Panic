@@ -5,8 +5,6 @@
 
 [node name="NumberClosePopupDesc" instance=ExtResource("1_ea8dl")]
 is_ascending = false
-min_taps = 15
-max_taps = 15
 
 [node name="Background" parent="." index="0"]
 texture = ExtResource("2_mp8on")
