@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://xm4sdytpa1gb"]
+
+[ext_resource type="PackedScene" uid="uid://dlthn0xepjkn3" path="res://nodes/number_close_popup.tscn" id="1_ea8dl"]
+[ext_resource type="Texture2D" uid="uid://qke5ai4qllsm" path="res://images/green_popupbox.jpg" id="2_mp8on"]
+
+[node name="NumberClosePopupDesc" instance=ExtResource("1_ea8dl")]
+is_ascending = false
+
+[node name="Background" parent="." index="0"]
+texture = ExtResource("2_mp8on")
+
+[node name="Label" parent="Background" index="0"]
+text = "Sponsored Content - Press buttons in descending order to close"

@@ -20,6 +20,10 @@ static func refresh_popup_scenes(difficulty):
 		2:
 			if difficulty >= 3:
 				popup_scenes.push_back(load("res://nodes/number_close_popup.tscn"))
+		3:
+			if difficulty >= 4:
+				popup_scenes.push_back(load("res://nodes/number_close_popup_desc.tscn"))
+
 
 static func spawn(difficulty, position):
 	refresh_popup_scenes(difficulty)
@@ -31,4 +35,3 @@ static func spawn(difficulty, position):
 	new_popup.global_position = position
 	new_popup.add_image.texture = new_popup.add_textures.pick_random()
 	return new_popup
-	

@@ -5,11 +5,13 @@ extends BaseWindow
 @export var spawn_area : Area2D
 static var close_button = preload("res://nodes/close_button.tscn")
 
+var total_taps := 1
 var taps_left := 1
 var prev_button = null
 
 func _ready() -> void:
-	taps_left = randi_range(min_taps, max_taps + int(difficulty) - 1)
+	total_taps = randi_range(min_taps, max_taps + int(difficulty) - 1)
+	taps_left = total_taps
 	instruction_label.text = "Sponsored Content - press X %d more times to close" % taps_left
 	spawn_button()
 
@@ -17,6 +19,7 @@ func _ready() -> void:
 func _on_close_button_clicked():
 	taps_left -= 1
 	if taps_left <= 0:
+		GameUI.score += 100 + 50 * total_taps
 		queue_free()
 		return
 	instruction_label.text = "Sponsored Content - press X %d more times to close" % taps_left

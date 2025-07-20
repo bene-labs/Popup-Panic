@@ -43,9 +43,9 @@ vertical_alignment = 1
 
 [node name="Highscore" type="Label" parent="."]
 visible = false
-offset_left = 624.0
+offset_left = 610.0
 offset_top = 373.0
-offset_right = 901.0
+offset_right = 860.0
 offset_bottom = 412.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -58,9 +58,9 @@ vertical_alignment = 1
 
 [node name="Score" type="Label" parent="."]
 visible = false
-offset_left = 624.0
+offset_left = 614.0
 offset_top = 340.0
-offset_right = 901.0
+offset_right = 863.0
 offset_bottom = 379.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cbng5c3a32y6d" path="res://images/red_popupbox.jpg" id="3_fm21x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drhqs"]
-size = Vector2(580, 252)
+size = Vector2(566, 252)
 
 [node name="RandomClosePopup" node_paths=PackedStringArray("spawn_area") instance=ExtResource("1_sd0gf")]
 script = ExtResource("2_fm21x")
@@ -20,5 +20,5 @@ texture = ExtResource("3_fm21x")
 [node name="ButtonSpawnArea" type="Area2D" parent="Background" index="3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ButtonSpawnArea" index="0"]
-position = Vector2(-1, 8)
+position = Vector2(6, 8)
 shape = SubResource("RectangleShape2D_drhqs")

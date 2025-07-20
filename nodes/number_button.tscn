@@ -1,14 +1,36 @@
-[gd_scene load_steps=0 format=3 uid="uid://r8rg661hy3v8"]
+[gd_scene load_steps=5 format=3 uid="uid://r8rg661hy3v8"]
 
-[node name="NumberButton" type="Button"]
+[ext_resource type="Texture2D" uid="uid://crfu3moitb5jf" path="res://images/Clickablebutton_.jpg" id="1_80in5"]
+[ext_resource type="Texture2D" uid="uid://beksnxkbia13x" path="res://images/Clickablebutton_hover.jpg" id="2_etnq0"]
+[ext_resource type="Script" uid="uid://br7du30vumdq7" path="res://nodes/number_button.gd" id="3_qx105"]
+[ext_resource type="FontFile" uid="uid://8tpta4j7ts7d" path="res://fonts/VT323/VT323-Regular.ttf" id="4_ff55o"]
+
+[node name="NumberButton" type="TextureButton"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1240.0
-offset_bottom = -680.0
+offset_left = -42.0
+offset_top = -10.0
+offset_right = -1113.0
+offset_bottom = -678.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_disabled_color = Color(0.116655, 0.461153, 0.233511, 1)
-theme_override_colors/icon_disabled_color = Color(0.301788, 0.745392, 0.339631, 1)
-theme_override_font_sizes/font_size = 24
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("1_80in5")
+texture_hover = ExtResource("2_etnq0")
+texture_disabled = ExtResource("2_etnq0")
+script = ExtResource("3_qx105")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.00001
+offset_top = -7.5
+offset_right = 206.0
+offset_bottom = 57.5
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_ff55o")
+theme_override_font_sizes/font_size = 64
 text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
