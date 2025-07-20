@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://seyoqwcg5u1h"]
+[gd_scene load_steps=7 format=3 uid="uid://seyoqwcg5u1h"]
 
 [ext_resource type="Texture2D" uid="uid://bao3jf185cn56" path="res://images/PopupPanicTitleScreen.jpg" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://dmc17nknf6dmn" path="res://main_menu.gd" id="1_glbon"]
 [ext_resource type="Texture2D" uid="uid://crfu3moitb5jf" path="res://images/Clickablebutton_.jpg" id="2_jix8l"]
 [ext_resource type="Texture2D" uid="uid://beksnxkbia13x" path="res://images/Clickablebutton_hover.jpg" id="3_glbon"]
 [ext_resource type="FontFile" uid="uid://8tpta4j7ts7d" path="res://fonts/VT323/VT323-Regular.ttf" id="4_nlkkf"]
+[ext_resource type="PackedScene" uid="uid://bgd035ejxx286" path="res://image_rotation.tscn" id="6_nlkkf"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_glbon")
 
 [node name="PopupPanicTitleScreen" type="Sprite2D" parent="."]
-position = Vector2(671, 358)
+position = Vector2(648, 358)
 scale = Vector2(0.89, 0.89)
 texture = ExtResource("1_06t4h")
 
@@ -18,9 +19,9 @@ texture = ExtResource("1_06t4h")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 633.0
+offset_left = 610.0
 offset_top = 416.0
-offset_right = 842.0
+offset_right = 819.0
 offset_bottom = 468.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -69,5 +70,73 @@ theme_override_font_sizes/font_size = 30
 text = "Your Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ImageRotation" parent="." instance=ExtResource("6_nlkkf")]
+offset_left = -56.0
+offset_top = 573.0
+offset_right = 2676.0
+offset_bottom = 2621.0
+min_delay = 2.0
+
+[node name="ImageRotation2" parent="." instance=ExtResource("6_nlkkf")]
+offset_left = -56.0
+offset_right = 2676.0
+min_delay = 2.0
+
+[node name="ImageRotation3" parent="." instance=ExtResource("6_nlkkf")]
+offset_left = -56.0
+offset_top = 286.0
+offset_right = 2676.0
+offset_bottom = 2334.0
+min_delay = 2.0
+
+[node name="ImageRotation4" parent="." instance=ExtResource("6_nlkkf")]
+offset_left = -56.0
+offset_top = 429.0
+offset_right = 2676.0
+offset_bottom = 2477.0
+min_delay = 2.0
+
+[node name="ImageRotation5" parent="." instance=ExtResource("6_nlkkf")]
+offset_left = -56.0
+offset_top = 143.0
+offset_right = 2676.0
+offset_bottom = 2191.0
+min_delay = 2.0
+
+[node name="ImageRotation6" parent="." instance=ExtResource("6_nlkkf")]
+offset_left = 1161.0
+offset_top = 575.0
+offset_right = 3893.0
+offset_bottom = 2623.0
+min_delay = 2.0
+
+[node name="ImageRotation7" parent="." instance=ExtResource("6_nlkkf")]
+offset_left = 1161.0
+offset_top = 2.0
+offset_right = 3893.0
+offset_bottom = 2050.0
+min_delay = 2.0
+
+[node name="ImageRotation8" parent="." instance=ExtResource("6_nlkkf")]
+offset_left = 1161.0
+offset_top = 288.0
+offset_right = 3893.0
+offset_bottom = 2336.0
+min_delay = 2.0
+
+[node name="ImageRotation9" parent="." instance=ExtResource("6_nlkkf")]
+offset_left = 1161.0
+offset_top = 431.0
+offset_right = 3893.0
+offset_bottom = 2479.0
+min_delay = 2.0
+
+[node name="ImageRotation10" parent="." instance=ExtResource("6_nlkkf")]
+offset_left = 1161.0
+offset_top = 145.0
+offset_right = 3893.0
+offset_bottom = 2193.0
+min_delay = 2.0
 
 [connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]
