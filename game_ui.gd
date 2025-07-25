@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 func _exit_tree() -> void:
 	if score > high_score:
 		high_score = score
+		NG.scoreboard_submit(NewgroundsIds.ScoreboardId.BestScores, high_score)
 		var file = FileAccess.open("Highscore.sav", FileAccess.WRITE)
 		file.store_32(high_score)
 		file.close()

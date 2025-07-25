@@ -15,11 +15,30 @@ run/main_scene="uid://seyoqwcg5u1h"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+NG="*res://addons/newgrounds/scripts/newgrounds.tscn"
+NGCloudSave="*res://addons/newgrounds/scripts/newgrounds_cloudsave.gd"
+
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/newgrounds/plugin.cfg")
+
+[global_group]
+
+CloudSave="Newgrounds Cloudsave"
+
+[newgrounds.io]
+
+opened_getting_started_page=true
+app_id="60572:ykNHazIk"
+AES-128_key="l5nMDZXslgLv9Lo+EDpgww=="
 
 [rendering]
 

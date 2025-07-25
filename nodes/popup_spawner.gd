@@ -46,8 +46,8 @@ func spawn_popup():
 
 func _on_difficulty_timer_timeout() -> void:
 	difficulty += difficulty_step
-	min_delay = max(0.1, init_min_delay - difficulty / (48 if difficulty < 5 else 20))
-	max_delay = max(0.4, init_max_delay - difficulty / (48 if difficulty < 5 else 20))
+	min_delay = max(0.1, init_min_delay - difficulty / (60 if difficulty < 5 else 20))
+	max_delay = max(0.4, init_max_delay - difficulty / (60 if difficulty < 5 else 20))
 
 
 func _on_spawn_timer_timeout() -> void:

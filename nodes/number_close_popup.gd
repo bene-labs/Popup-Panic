@@ -12,6 +12,7 @@ static var num_button := preload("res://nodes/number_button.tscn")
 
 
 func _ready() -> void:
+	super._ready()
 	tap_count = randi_range(min_taps, max_taps + int((difficulty - 2) / 2))
 	spawn_buttons()
 	needed_num = 1 if is_ascending else tap_count
@@ -53,8 +54,8 @@ func _on_num_button_clicked(button, num):
 		if (is_ascending and needed_num > tap_count) or (not is_ascending and needed_num < 1):
 			GameUI.score += 100 * tap_count
 			queue_free()
-	else:
-		for b in buttons:
-			b.disabled = false
-			button.modulate = Color.WHITE
-		needed_num = 1 if is_ascending else tap_count
+	#else:
+		#for b in buttons:
+			#b.disabled = false
+			#button.modulate = Color.WHITE
+		#needed_num = 1 if is_ascending else tap_count

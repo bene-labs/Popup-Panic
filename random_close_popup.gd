@@ -10,7 +10,8 @@ var taps_left := 1
 var prev_button = null
 
 func _ready() -> void:
-	total_taps = randi_range(min_taps, max_taps + int(difficulty) - 1)
+	super._ready()
+	total_taps = randi_range(min_taps + max(0, int((difficulty - 5) / 2)), max_taps + int((difficulty - 1) / 2))
 	taps_left = total_taps
 	instruction_label.text = "Sponsored Content - press X %d more times to close" % taps_left
 	spawn_button()

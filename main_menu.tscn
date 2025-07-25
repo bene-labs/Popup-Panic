@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://seyoqwcg5u1h"]
+[gd_scene load_steps=11 format=3 uid="uid://seyoqwcg5u1h"]
 
 [ext_resource type="Texture2D" uid="uid://bao3jf185cn56" path="res://images/PopupPanicTitleScreen.jpg" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://dmc17nknf6dmn" path="res://main_menu.gd" id="1_glbon"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://beksnxkbia13x" path="res://images/Clickablebutton_hover.jpg" id="3_glbon"]
 [ext_resource type="FontFile" uid="uid://8tpta4j7ts7d" path="res://fonts/VT323/VT323-Regular.ttf" id="4_nlkkf"]
 [ext_resource type="PackedScene" uid="uid://bgd035ejxx286" path="res://image_rotation.tscn" id="6_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://16koew027wbm" path="res://images/fullscreen_arrows.png" id="7_8qtwp"]
+[ext_resource type="Script" uid="uid://dwx1l0x4bnf3g" path="res://fullscreen_button.gd" id="8_dy7ct"]
+[ext_resource type="PackedScene" uid="uid://d35a1d73neyh" path="res://nodes/toggle_mute_sound_button.tscn" id="9_0o4t1"]
+[ext_resource type="AudioStream" uid="uid://cxpi1ibm1lueu" path="res://sounds/preview_4.mp3" id="9_dy7ct"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_glbon")
@@ -139,4 +143,19 @@ offset_right = 3893.0
 offset_bottom = 2193.0
 min_delay = 2.0
 
+[node name="FullscreenButton" type="Button" parent="."]
+offset_left = 1241.0
+offset_top = 680.0
+offset_right = 1273.0
+offset_bottom = 712.0
+icon = ExtResource("7_8qtwp")
+script = ExtResource("8_dy7ct")
+
+[node name="ToggleMuteSoundButton" parent="." instance=ExtResource("9_0o4t1")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_dy7ct")
+autoplay = true
+
 [connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="FullscreenButton" to="FullscreenButton" method="_on_pressed"]

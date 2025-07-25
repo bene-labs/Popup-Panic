@@ -17,3 +17,6 @@ text = "Sponsored Content - Press buttons in ascending order to close"
 
 [node name="CollisionShape2D" parent="Background/ButtonSpawnArea" index="0"]
 position = Vector2(-62.5, 14)
+
+[node name="AudioStreamPlayer2D" parent="." index="1"]
+volume_db = 0.0

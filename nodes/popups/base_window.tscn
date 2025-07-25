@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bxa65vyd4qmb2"]
+[gd_scene load_steps=19 format=3 uid="uid://bxa65vyd4qmb2"]
 
 [ext_resource type="Script" uid="uid://5vgi7m2ih5so" path="res://nodes/popups/base_window.gd" id="1_tua2f"]
 [ext_resource type="Texture2D" uid="uid://cba37ud3y6wxn" path="res://images/Blank_window.png" id="2_r3qf2"]
@@ -17,9 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://db5h8ak1ac3ig" path="res://images/adds/popup5.png" id="12_lcmjm"]
 [ext_resource type="Texture2D" uid="uid://cwkpt5qrj7566" path="res://images/adds/popup6.png" id="13_2ya4o"]
 [ext_resource type="Texture2D" uid="uid://badp41514hnhd" path="res://images/adds/popup7.png" id="14_u48ig"]
+[ext_resource type="AudioStream" uid="uid://r7u04y6pbnvj" path="res://sounds/erro.mp3" id="18_b4sls"]
 
-[node name="BaseWindow" type="Node2D" node_paths=PackedStringArray("backgroud", "add_image", "instruction_label")]
+[node name="BaseWindow" type="Node2D" node_paths=PackedStringArray("audio_player", "backgroud", "add_image", "instruction_label")]
 script = ExtResource("1_tua2f")
+audio_player = NodePath("AudioStreamPlayer2D")
 backgroud = NodePath("Background")
 add_textures = Array[Texture2D]([ExtResource("5_k66we"), ExtResource("3_6hjm6"), ExtResource("4_b4sls"), ExtResource("5_7w3ww"), ExtResource("6_jmwjh"), ExtResource("7_73qai"), ExtResource("8_7gojg"), ExtResource("9_3fslf"), ExtResource("10_3fwwd"), ExtResource("11_nansk"), ExtResource("12_lcmjm"), ExtResource("13_2ya4o"), ExtResource("14_u48ig")])
 add_image = NodePath("Background/Add")
@@ -54,6 +56,10 @@ offset_bottom = 4008.0
 scale = Vector2(0.07, 0.07)
 mouse_filter = 2
 texture = ExtResource("5_k66we")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_b4sls")
+volume_db = -5.0
 
 [connection signal="mouse_entered" from="Background/DragArea" to="Background/DragArea" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Background/DragArea" to="Background/DragArea" method="_on_mouse_exited"]

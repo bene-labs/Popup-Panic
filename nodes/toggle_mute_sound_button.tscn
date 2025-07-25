@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d35a1d73neyh"]
+
+[ext_resource type="Texture2D" uid="uid://16koew027wbm" path="res://images/fullscreen_arrows.png" id="1_5nbkq"]
+[ext_resource type="Script" uid="uid://clsrx0bvxjeff" path="res://toggle_mute_sound_button.gd" id="2_omv3x"]
+
+[node name="ToggleMuteSoundButton" type="Button"]
+offset_left = 1200.0
+offset_top = 680.0
+offset_right = 1232.0
+offset_bottom = 712.0
+icon = ExtResource("1_5nbkq")
+script = ExtResource("2_omv3x")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

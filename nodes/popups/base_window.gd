@@ -4,6 +4,7 @@ extends Node2D
 static var popup_scenes : Array
 @export var min_size = 0.3
 @export var max_size = 1
+@export var audio_player : AudioStreamPlayer
 
 @export var backgroud : Node2D
 @export var add_textures : Array[Texture2D]
@@ -23,6 +24,10 @@ static func refresh_popup_scenes(difficulty):
 		3:
 			if difficulty >= 4:
 				popup_scenes.push_back(load("res://nodes/number_close_popup_desc.tscn"))
+
+func _ready():
+	audio_player.pitch_scale = randf_range(0.8, 1.35)
+	audio_player.play()
 
 
 static func spawn(difficulty, position):
